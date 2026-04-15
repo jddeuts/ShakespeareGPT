@@ -32,7 +32,7 @@ class AgentCore:
         response = self.llm.invoke(prompt).content
         answer = response[response.find("Final Answer:") + 13:]
         print("LLM:", answer, "\n")
-        #print(response)
+        # TestComment
         tool_name, param = self._extract_action(response)
         if tool_name:
             result = self._execute_tool(tool_name, param)
